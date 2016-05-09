@@ -624,7 +624,9 @@ public class ZMWItemTouchHelper extends RecyclerView.ItemDecoration
                 rv.start();
                 preventLayout = true;
             } else {
+
                 removeChildDrawingOrderCallbackIfNecessary(prevSelected.itemView);
+
                 mCallback.clearView(mRecyclerView, prevSelected);
             }
             mSelected = null;
@@ -640,6 +642,8 @@ public class ZMWItemTouchHelper extends RecyclerView.ItemDecoration
             if (actionState == ACTION_STATE_DRAG) {
                 mSelected.itemView.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
             }
+
+
         }
         final ViewParent rvParent = mRecyclerView.getParent();
         if (rvParent != null) {
@@ -825,6 +829,7 @@ public class ZMWItemTouchHelper extends RecyclerView.ItemDecoration
         }
         // may swap.
         RecyclerView.ViewHolder target = mCallback.chooseDropTarget(viewHolder, swapTargets, x, y);
+
         if (target == null) {
             mSwapTargets.clear();
             mDistances.clear();

@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     @Bind(R.id.recyclerview)
     RecyclerView recyclerView;
 
+
     MainActivityHelper mainActivityHelper;
 
     @Override
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initDrag(){
-
+        recyclerView.getDrawingCache();
     }
 
 }
